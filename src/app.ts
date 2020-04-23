@@ -41,6 +41,7 @@ export default class HelloWorld {
                 resourceId: "artifact: 1429917011101614557",
                 actor: {
                     name: 'Retro',
+			                    exclusiveToUser: user.id,
                     attachment: {
                         userId: user.id,
                         attachPoint: 'head'
