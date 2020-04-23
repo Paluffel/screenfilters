@@ -36,7 +36,7 @@ export default class HelloWorld {
         // Code to run when a user joins.
         console.log(`User joined: ${user.name}`);
         console.log(user);
-        if (user.name === "Paluffel"){
+        if (user.name === "Wouter L(G)BTQ+"){
             Actor.CreateFromLibrary(this.context, {
                 resourceId: "artifact: 1429917011101614557",
                 actor: {
