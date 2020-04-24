@@ -47,8 +47,8 @@ export default class HelloWorld {
                         attachPoint: 'head'
                     },
                     transform: {local: {
-                        position: { x: 0, y: 0, z: 0.13 },
-                        scale: { x: 0.05, y: 0.05, z: 0.025},
+                        position: { x: 0, y: 0.2, z: 0 },
+                        scale: { x: 1, y: 1, z: 1},
                         rotation: Quaternion.FromEulerAngles(270 * DegreesToRadians, 0 * DegreesToRadians, 0 * DegreesToRadians)
                     }}
                 }
