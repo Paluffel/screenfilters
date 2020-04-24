@@ -65,7 +65,7 @@ export default class HelloWorld {
 			if (!this.attachedItems[user.id]) {
 				// If item for user does not exist, create it and add to list.
 				this.attachedItems[user.id] = Actor.CreateFromLibrary(this.context, {
-					resourceId: "artifact: 1429917023424479713",
+					resourceId: "artifact: 1429917004155847128",
 					actor: {
 						name: 'Invert',
 						grabbable: true,
@@ -74,7 +74,7 @@ export default class HelloWorld {
 							attachPoint: 'right-hand'
 						},
 						transform: {local: {
-						  position: { x: 0, y: 0, z: 0.13 },
+						  position: { x: 0, y: 0.1, z: 0.13 },
                         scale: { x: 0.05, y: 0.05, z: 0.025},
                         rotation: Quaternion.FromEulerAngles(270 * DegreesToRadians, 0 * DegreesToRadians, 0 * DegreesToRadians)
 						}}
