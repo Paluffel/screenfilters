@@ -43,7 +43,7 @@ export default class HelloWorld {
                     name: 'Retro',
                     attachment: {
                         userId: user.id,
-                        attachPoint: 'spine'
+                        attachPoint: 'hips'
                     },
                     transform: {local: {
                         position: { x: 0, y: 0, z: 0 },
