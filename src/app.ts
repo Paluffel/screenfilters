@@ -46,7 +46,7 @@ export default class HelloWorld {
                         attachPoint: 'spine-middle'
                     },
                     transform: {local: {
-                        position: { x: 0, y: -1.5, z: 0 },
+                        position: { x: 0, y: -2, z: 0 },
                         scale: { x: 1, y: 1, z: 1},
                        
                     }}
