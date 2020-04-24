@@ -43,12 +43,12 @@ export default class HelloWorld {
                     name: 'Retro',
                     attachment: {
                         userId: user.id,
-                        attachPoint: 'hips'
+                        attachPoint: 'spine-middle'
                     },
                     transform: {local: {
                         position: { x: 0, y: 0, z: 0 },
                         scale: { x: 4, y: 4, z: 4},
-                        rotation: Quaternion.FromEulerAngles(270 * DegreesToRadians, 0 * DegreesToRadians, 0 * DegreesToRadians)
+                       
                     }}
                 }
             });
