@@ -68,6 +68,7 @@ export default class HelloWorld {
 					resourceId: "artifact: 1221109448009843490",
 					actor: {
 						name: 'Invert',
+						grabbable: true,
 						attachment: {
 							userId: user.id,
 							attachPoint: 'right-hand'
