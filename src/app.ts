@@ -20,71 +20,38 @@ import {
 	Vector3
 } from '@microsoft/mixed-reality-extension-sdk';
 import * as MRE from '@microsoft/mixed-reality-extension-sdk';
+import * as MRESDK from '@microsoft/mixed-reality-extension-sdk';
 
 export default class HelloWorld {
+	public expectedResultDescription = "Different grabbable items.";
+
 	constructor(private context: Context, private baseUrl: string) {
 		this.context.onUserJoined((user) => this.userJoined(user));
-		this.context.onUserLeft((user) => this.userLeft(user));
-		this.context.onStarted(() => this.started());
 	}
 
 	// Create list to keep track of items attached to users.
 	private attachedItems: {[id: string]: Actor} = {};
 
-	private userJoined(user: User) {
-		// Code to run when a user joins.
-		console.log(`User joined: ${user.name}`);
-	}
-
-	private userLeft(user: User) {
-		// Code to run when a user leaves.
-		console.log(`User left: ${user.name}`);
-
-		// If attached item for user exists, destroy it and remove from list.
-		if (this.attachedItems[user.id]) {
-			this.attachedItems[user.id].destroy();
-			delete this.attachedItems[user.id];
-		}
-	}
-
-	private started() {
-		// Create cube.
-		const mirror = Actor.CreateFromLibrary(this.context, {
-			resourceId: "artifact: 1455171633768563080",
-			actor: {
-				name: 'Mirror',
-				transform: {local: {
-					position: { x: 0, y: 0, z: 0 },
-					scale: { x: 1, y: 1, z: 1}
-				}},
-			}
-		});
-
-		// Create button behavior for cube.
-		mirror.setBehavior(ButtonBehavior).onButton("pressed", (user: User) => {
-			if (!this.attachedItems[user.id]) {
-				// If item for user does not exist, create it and add to list.
-				this.attachedItems[user.id] = Actor.CreateFromLibrary(this.context, {
-					resourceId: "artifact: 1429917023424479713",
-					actor: {
-						name: 'Invert',
-						grabbable: true,
-						attachment: {
-							userId: user.id,
-							attachPoint: 'right-hand'
-						},
-						transform: {local: {
-						  position: { x: 0, y: 0.1, z: 0.13 },
-                        scale: { x: 0.05, y: 0.05, z: 0.025},
-                        rotation: Quaternion.FromEulerAngles(270 * DegreesToRadians, 0 * DegreesToRadians, 0 * DegreesToRadians)
-						}}
-					}
-				});
-			} else {
-				// If item already exists, destroy it and delete from list.
-				this.attachedItems[user.id].destroy();
-				delete this.attachedItems[user.id];
-			}
-		});
-	}
+    private userJoined(user: User) {
+        // Code to run when a user joins.
+        console.log(`User joined: ${user.name}`);
+        console.log(user);
+        if (user.name === "Paluffel","Paluffel"){
+            Actor.CreateFromLibrary(this.context, {
+                resourceId: "artifact: 1461744305302405179",
+                actor: {
+                    name: 'Retro',
+                    attachment: {
+                        userId: user.id,
+                        attachPoint: 'head'
+                    },
+                    transform: {local: {
+                        position: { x: 0, y: -0.267, z: 0.02 },
+                        scale: { x: 0.06, y: 0.06, z: 0.06},
+                       
+                    }}
+                }
+            });
+        }
+    }
 }
