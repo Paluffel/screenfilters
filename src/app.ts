@@ -5,9 +5,6 @@
 
 import {
 	Actor,
-	AnimationEaseCurves,
-	AnimationKeyframe,
-	AnimationWrapMode,
 	ButtonBehavior,
 	Collider,
 	ColliderGeometry,
